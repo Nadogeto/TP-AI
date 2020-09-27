@@ -13,6 +13,7 @@ public class GlobalFlock : MonoBehaviour
     public static GameObject[] allBoids = new GameObject[numBoids];
 
     public static Vector3 goalPosition = Vector3.zero;
+
     GameObject boid;
 
     [Range(1, 50)]
