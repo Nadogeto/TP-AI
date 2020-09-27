@@ -7,9 +7,9 @@ public class GlobalFlock : MonoBehaviour
     public GameObject boidPrefab;
     public GameObject goalPrefab;
 
-    public static int fieldSize = 7; 
+    public static int fieldSize = 20; 
 
-    static int numBoids = 10;
+    static int numBoids = 100;
     public static GameObject[] allBoids = new GameObject[numBoids];
 
     public static Vector3 goalPosition = Vector3.zero;
