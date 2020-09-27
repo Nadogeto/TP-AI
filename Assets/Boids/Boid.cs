@@ -9,7 +9,7 @@ public class Boid : MonoBehaviour
 
     //Vector3 averageHeading;
     //Vector3 averagePosition;
-
+    [Range(1, 10)]
     float neighboorDistance = 4.0f;
 
     bool turning = false;
