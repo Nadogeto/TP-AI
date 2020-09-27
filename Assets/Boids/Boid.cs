@@ -7,10 +7,7 @@ public class Boid : MonoBehaviour
     public float speed = 0.5f;
     float rotationSpeed = 3.0f;
 
-    //Vector3 averageHeading;
-    //Vector3 averagePosition;
-    [Range(1, 10)]
-    float neighboorDistance = 4.0f;
+    public float neighboorDistance = 4.0f;
 
     bool turning = false;
 

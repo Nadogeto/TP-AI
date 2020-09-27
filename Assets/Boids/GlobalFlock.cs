@@ -13,6 +13,10 @@ public class GlobalFlock : MonoBehaviour
     public static GameObject[] allBoids = new GameObject[numBoids];
 
     public static Vector3 goalPosition = Vector3.zero;
+    GameObject boid;
+
+    [Range(1, 50)]
+    public float neighboor = 4.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,9 @@ public class GlobalFlock : MonoBehaviour
                                        Random.Range(-fieldSize, fieldSize),
                                        Random.Range(-fieldSize, fieldSize));
             goalPrefab.transform.position = goalPosition;
-        }        
+        }
+
+        Boid boid = GetComponent<Boid>();
+        boid.neighboorDistance = neighboor;
     }
 }
