@@ -11,15 +11,12 @@ public class Boid : MonoBehaviour
 
     bool turning = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         //Randomize la vitesse
         speed = Random.Range(0.5f, 1);
     }
 
-    // Update is called once per frame
     void Update()
     {
         //test la distance entre la position du boid et du field
@@ -54,13 +51,13 @@ public class Boid : MonoBehaviour
         GameObject[] GoB;
         GoB = GlobalFlock.allBoids;
 
-        //Initalement les vecteurs sont à zéro mais ils vont être calculés par la suite
-        //Vecteur qui permet de suivre les autres boids (leur centre)
+        //initalement les vecteurs sont à zéro mais ils vont être calculés par la suite
+        //vecteur qui permet de suivre les autres boids (leur centre)
         Vector3 averageCenter = Vector3.zero;
         //Vecteur qui permet de les éviter s'ils sont trop proches
         Vector3 avoid = Vector3.zero;
 
-        //Vitesse du groupe
+        //vitesse du groupe
         float gSpeed = 0.1f;
 
         Vector3 goalPosition = GlobalFlock.goalPosition;

@@ -17,8 +17,9 @@ public class Pathfinding : MonoBehaviour {
 	public void StartFindPath(Vector3 startPos, Vector3 targetPos) {
 		StartCoroutine(FindPath(startPos,targetPos));
 	}
-	
-	IEnumerator FindPath(Vector3 startPos, Vector3 targetPos) {
+
+    //trouve le meilleur chemin en parcourant les nodes afin d'aller de startPos à targetPos  
+    IEnumerator FindPath(Vector3 startPos, Vector3 targetPos) {
 
 		Vector3[] waypoints = new Vector3[0];
 		bool pathSuccess = false;
@@ -26,7 +27,7 @@ public class Pathfinding : MonoBehaviour {
 		Node startNode = grid.NodeFromWorldPoint(startPos);
 		Node targetNode = grid.NodeFromWorldPoint(targetPos);
 		
-		
+		// check si le p de départ et le p d'arrivée sont walkables
 		if (startNode.walkable && targetNode.walkable) {
 			Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
 			HashSet<Node> closedSet = new HashSet<Node>();
@@ -36,6 +37,7 @@ public class Pathfinding : MonoBehaviour {
 				Node currentNode = openSet.RemoveFirst();
 				closedSet.Add(currentNode);
 				
+                //check si targetNode atteint
 				if (currentNode == targetNode) {
 					pathSuccess = true;
 					break;
@@ -45,7 +47,8 @@ public class Pathfinding : MonoBehaviour {
 					if (!neighbour.walkable || closedSet.Contains(neighbour)) {
 						continue;
 					}
-					
+
+					//actualise le gCost et hCost des nodes voisins
 					int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
 					if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
 						neighbour.gCost = newMovementCostToNeighbour;
@@ -58,16 +61,20 @@ public class Pathfinding : MonoBehaviour {
 				}
 			}
 		}
+
+        //retourne le chemin intégral entre startNode et targetNode
 		yield return null;
 		if (pathSuccess) {
 			waypoints = RetracePath(startNode,targetNode);
 		}
 		requestManager.FinishedProcessingPath(waypoints,pathSuccess);
-		
 	}
 	
+    //récupère le chemin entre the start node et the end node
 	Vector3[] RetracePath(Node startNode, Node endNode) {
-		List<Node> path = new List<Node>();
+
+        //liste de nodes
+        List<Node> path = new List<Node>();
 		Node currentNode = endNode;
 		
 		while (currentNode != startNode) {
@@ -77,7 +84,6 @@ public class Pathfinding : MonoBehaviour {
 		Vector3[] waypoints = SimplifyPath(path);
 		Array.Reverse(waypoints);
 		return waypoints;
-		
 	}
 	
 	Vector3[] SimplifyPath(List<Node> path) {
@@ -93,8 +99,11 @@ public class Pathfinding : MonoBehaviour {
 		}
 		return waypoints.ToArray();
 	}
-	
-	int GetDistance(Node nodeA, Node nodeB) {
+
+
+    //calculate how many horizontal or vertical moves we need to arrive at a certain node
+    //in this configuration : x>y => 14y+10(x-y)
+    int GetDistance(Node nodeA, Node nodeB) {
 		int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
 		int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
 		

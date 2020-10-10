@@ -19,7 +19,6 @@ public class GlobalFlock : MonoBehaviour
     [Range(1, 50)]
     public float neighboor = 4.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         for (int i=0; i<numBoids; i++)
@@ -33,7 +32,6 @@ public class GlobalFlock : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Déplace la sphère "Goal" dans le périmètre du field en random
