@@ -37,7 +37,7 @@ public class Pathfinding : MonoBehaviour {
 				Node currentNode = openSet.RemoveFirst();
 				closedSet.Add(currentNode);
 				
-                //check si targetNode atteint
+                //check si targetNode a été atteint
 				if (currentNode == targetNode) {
 					pathSuccess = true;
 					break;
