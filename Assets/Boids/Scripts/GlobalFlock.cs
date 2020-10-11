@@ -34,7 +34,7 @@ public class GlobalFlock : MonoBehaviour
 
     void Update()
     {
-        //Déplace la sphère "Goal" dans le périmètre du field en random
+        //déplace la sphère "Goal" dans le périmètre du field en random
         if (Random.Range (0, 1000) < 5)
         {
             goalPosition = new Vector3(Random.Range(-fieldSize, fieldSize),
