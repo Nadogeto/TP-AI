@@ -13,7 +13,7 @@ public class Boid : MonoBehaviour
 
     void Start()
     {
-        //Randomize la vitesse
+        //randomize la vitesse
         speed = Random.Range(0.5f, 1);
     }
 
