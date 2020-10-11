@@ -18,6 +18,7 @@ public class AI : MonoBehaviour
         gameTimer = Time.time;
     }
 
+    //appelle l'Update de stateMachine toutes les 5secondes
     private void Update()
     {
         if(Time.time > gameTimer + 1)
