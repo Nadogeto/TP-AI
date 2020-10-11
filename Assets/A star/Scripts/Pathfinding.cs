@@ -76,7 +76,7 @@ public class Pathfinding : MonoBehaviour {
 
 	}
 
-    //calculate how many horizontal or vertical moves we need to arrive at a certain node
+    //calcule combiens de mouvements horizontals ou verticals sont nécessaires afin d'arriver un certain node
     //in this configuration : x>y => 14y+10(x-y)
     int GetDistance(Node nodeA, Node nodeB) {
 		int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
