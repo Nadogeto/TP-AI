@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 199721646}
   - component: {fileID: 199721645}
   - component: {fileID: 199721647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DroneB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone Model
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e8411821aa254e94aa3abfe057ee73f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8411821aa254e94aa3abfe057ee73f1, type: 3}
 --- !u!1 &705507993
@@ -612,7 +617,7 @@ GameObject:
   - component: {fileID: 808463281}
   - component: {fileID: 808463280}
   - component: {fileID: 808463279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DroneC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone Model
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e8411821aa254e94aa3abfe057ee73f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8411821aa254e94aa3abfe057ee73f1, type: 3}
@@ -938,7 +948,7 @@ GameObject:
   - component: {fileID: 1371612532}
   - component: {fileID: 1371612531}
   - component: {fileID: 1371612530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DroneD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,6 +1086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone Model
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e8411821aa254e94aa3abfe057ee73f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8411821aa254e94aa3abfe057ee73f1, type: 3}
 --- !u!1 &1564101484
@@ -1089,7 +1104,7 @@ GameObject:
   - component: {fileID: 1564101485}
   - component: {fileID: 1564101486}
   - component: {fileID: 1564101487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DroneA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,6 +1333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone Model
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e8411821aa254e94aa3abfe057ee73f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8411821aa254e94aa3abfe057ee73f1, type: 3}
