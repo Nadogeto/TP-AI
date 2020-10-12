@@ -44,6 +44,6 @@ public class GlobalFlock : MonoBehaviour
         }
 
         Boid boid = GetComponent<Boid>();
-        boid.neighboorDistance = neighboor;
+        //boid.neighboorDistance = neighboor;
     }
 }
